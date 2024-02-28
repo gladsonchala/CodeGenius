@@ -12,7 +12,7 @@ if($is_db_connected == true){
         $stmt->execute(['username' => $username, 'password' => $password, 'email' => $email, 'phone' => $phone]);
         echo "<script type='text/javascript'>
                         alert('User registered successfully!');
-                        window.location.href = 'login.php';
+                        window.location.href = 'register.html';
                     </script>";
     }
     echo "Database connected successfully!";
