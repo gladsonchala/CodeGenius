@@ -1,7 +1,8 @@
+<?php
 $servername = 'localhost:3308';
 $username = 'root';
 $password = '';
-$dbname = 'CodeGenius';
+$dbname = 'codegenius';
 $is_db_connected = false;
 
 try{
@@ -12,3 +13,4 @@ try{
     echo "Connection failed: " . $e->getMessage();
     $is_db_connected = false;
 }
+?>
