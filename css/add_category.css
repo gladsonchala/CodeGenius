@@ -39,20 +39,20 @@ form .con {
 }
 
 /* Header form */
-header {
+header.head-form {
     margin: 2% auto 10% auto;
     text-align: center;
 }
 
 /* Login title form */
-header h2 {
+header.head-form h2 {
     font-size: 250%;
     font-family: 'Playfair Display', serif;
     color: #3e403f;
 }
 
 /* Welcome message or explanation of the login form */
-header p {
+header.head-form p {
     letter-spacing: 0.05em;
 }
 
@@ -130,8 +130,8 @@ label[for="course_image"]:hover {
 
 
 
-/* Buttons */
-button {
+/* Button */
+input.add-category-btn {
     display: inline-block;
     color: #fff;
     width: 280px;
@@ -149,42 +149,13 @@ button {
 }
 
 /* Buttons hover */
-button:hover {
+input.add-category-btn:hover {
     transform: translatey(3px);
     box-shadow: none;
     animation: ani9 0.4s ease-in-out infinite alternate;
     background-color: #a221ec;
     color: #00ffea;
 }
-
-
-/* Submit Button */
-input.add-course-btn {
-    display: inline-block;
-    color: #fff;
-    width: 280px;
-    height: 50px;
-    padding: 0 20px;
-    background: #7103b1;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.2s linear;
-    margin: 7% auto;
-    letter-spacing: 0.05em;
-}
-
-/* Buttons hover */
-input.add-course-btn:hover {
-    transform: translatey(3px);
-    box-shadow: none;
-    animation: ani9 0.4s ease-in-out infinite alternate;
-    background-color: #a221ec;
-    color: #00ffea;
-}
-
 
 /* Buttons hover Animation */
 @keyframes ani9 {
