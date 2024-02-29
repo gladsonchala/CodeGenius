@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="overlay">
-        <form action="backend/add_course.php" method="POST">
+        <form action="backend/add_course.php" method="POST" enctype="multipart/form-data">
             <div class="con">
                 <header class="head-form">
                     <h2>Add Course</h2>
