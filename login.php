@@ -1,34 +1,33 @@
-<?php
-require 'conn.php';
-
-if($is_db_connected == true){
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $email_user_id = $_POST['email_user_id'];
-        $password = $_POST['password'];
-
-        if (filter_var($email_user_id, FILTER_VALIDATE_EMAIL)) {
-            $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
-            $stmt->execute(['email' => $email_user_id, 'password' => $password]);
-        } else {
-            $stmt = $conn->prepare("SELECT * FROM users WHERE user_id = :user_id AND password = :password");
-            $stmt->execute(['user_id' => $email_user_id, 'password' => $password]);
-        }
-
-        $user = $stmt->fetch();
-        if($user){
-            echo "<script type='text/javascript'>
-                        alert('User logged in successfully!');
-                        window.location.href = 'dashboard.html';
-                    </script>";
-        } else {
-            echo "<script type='text/javascript'>
-                        alert('Invalid email/user_id or password!');
-                        window.location.href = 'login.html';
-                    </script>";
-        }
-    }
-    echo "Database connected successfully!";
-} else {
-    echo "Database not connected. Try again Later!";
-}
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="css/login.css"> 
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="backend/login.php" method="POST" id="login"> 
+            <div class="user-box">
+                <input type="text" id="email_phone" name="email_phone" required>
+                <label>Email/Phone</label>
+            </div>
+            <div class="user-box">
+                <input type="password" id="password" name="password" required>
+                <label>Password</label>
+            </div>
+            <div id="submit_btn">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <input id="input_submit" type="submit" name="submit" value="Login">
+            </div>
+        </form>
+    </div>
+    
+    <script src="js/login.js" type="text/javascript"></script>
+</body>
+</html>

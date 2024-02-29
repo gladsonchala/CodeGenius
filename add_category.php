@@ -1,20 +1,31 @@
-<?php
-require 'conn.php';
-
-if($is_db_connected){
-    $category = $_POST['category_name'];
-    $stmt = $conn->prepare("INSERT INTO categories (category_name) VALUES (:category_name)");
-    $stmt->execute(['category_name' => $category]);
-    if ($stmt->rowCount() > 0) {
-        echo "<script type='text/javascript'>
-                        alert(\"Category {$category} added successfully!\");
-                        window.location.href = 'add_category.html';
-                    </script>";
-    } else {
-        echo "<script type='text/javascript'>
-                        alert(\"Error adding category! Try again later!!\");
-                        window.location.href = 'add_category.html';
-                    </script>";
-    }
-}
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Category</title>
+    <link rel="stylesheet" href="css/add_category.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="overlay">
+        <form action="backend/add_category.php" method="POST">
+            <div class="con">
+                <header class="head-form">
+                    <h2>Add Category</h2>
+                    <p>Enter category details here</p>
+                </header>
+                <br>
+                <div class="field-set">
+                    <span class="input-item">
+                        <i class="fa fa-list"></i>
+                    </span>
+                    <input class="form-input" id="category_name" name="category_name" type="text" placeholder="Category Name" required>
+                    <br>
+                    <input class="add-category-btn" type="submit" value="Add Category">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

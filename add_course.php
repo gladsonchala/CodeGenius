@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="overlay">
-        <form action="add_course.php" method="POST">
+        <form action="backend/add_course.php" method="POST">
             <div class="con">
                 <header class="head-form">
                     <h2>Add Course</h2>
@@ -42,10 +42,14 @@
                     </span>
                     <select class="form-input" id="course_category" name="course_category" required>
                         <option value="" disabled selected>Select Course Category</option>
-                        <!-- Populate with categories from the database -->
-                        <option value="1">Course Category 1</option>
-                        <option value="2">Course Category 2</option>
-                        <!-- Add more options as needed -->
+                        <?php 
+                        require 'backend/conn.php';
+                        $sql = "SELECT * FROM categories";
+                        $result = $conn->query($sql);
+                        $categories = $result->fetchAll();
+                        foreach($categories as $category): ?>
+                            <option value="<?php echo $category['category_id']; ?>"><?php echo $category['category_name']; ?></option>
+                        <?php endforeach; ?>
                     </select>
                     <br>
                     <span class="input-item">
@@ -53,10 +57,10 @@
                     </span>
                     <input class="form-input" id="channel_name" name="channel_name" type="text" placeholder="Course Owner Channel Name" required>
                     <br>
-                    <label for="course_image">
+                    <label for="image">
                         <i class="fa fa-file-image-o"></i>
                         Choose File
-                        <input class="form-input" id="course_image" name="course_image" type="file" accept="image/*" required>
+                        <input class="form-input" id="image" name="image" type="file" accept="image/*" required>
                     </label>
                     <br>
                     <input class="add-course-btn" type="submit" value="Add Course">
