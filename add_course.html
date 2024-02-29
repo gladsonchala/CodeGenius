@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course</title>
+    <link rel="stylesheet" href="css/add_course.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="overlay">
+        <form action="add_course.php" method="POST">
+            <div class="con">
+                <header class="head-form">
+                    <h2>Add Course</h2>
+                    <p>Enter course details here</p>
+                </header>
+                <br>
+                <div class="field-set">
+                    <span class="input-item">
+                        <i class="fa fa-book"></i>
+                    </span>
+                    <input class="form-input" id="course_name" name="course_name" type="text" placeholder="Course Name" required>
+                    <br>
+                    <span class="input-item">
+                        <i class="fa fa-info-circle"></i>
+                    </span>
+                    <textarea class="form-input" id="description" name="description" rows="4" placeholder="Description" required></textarea>
+                    <br>
+                    <span class="input-item">
+                        <i class="fa fa-link"></i>
+                    </span>
+                    <input class="form-input" id="course_link" name="course_link" type="url" placeholder="Course Link" required>
+                    <br>
+                    <span class="input-item">
+                        <i class="fa fa-clock-o"></i>
+                    </span>
+                    <input class="form-input" id="duration" name="duration" type="text" placeholder="Duration (Hours)" min="1" required>
+                    <br>
+                    <span class="input-item">
+                        <i class="fa fa-list"></i>
+                    </span>
+                    <select class="form-input" id="category" name="category" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <!-- Populate with categories from the database -->
+                        <option value="1">Category 1</option>
+                        <option value="2">Category 2</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                    <br>
+                    <label for="course_image">
+                        <i class="fa fa-file-image-o"></i>
+                        Choose File
+                        <input class="form-input" id="course_image" name="course_image" type="file" accept="image/*" required>
+                    </label>
+                    <br>
+                    <button class="log-in">Add Course</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

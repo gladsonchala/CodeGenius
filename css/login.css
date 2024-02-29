@@ -1,3 +1,6 @@
+/* Fonts From Google Font */
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
 html {
     height: 100%;
 }
@@ -5,8 +8,9 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background: linear-gradient(#140c20, #301844, #2c0b36);
+    font-family: 'Vibur', cursive;
+    font-family: 'Abel', sans-serif;
+    background: linear-gradient(#140c20, #2c0b36, #23062c);
 }
 
 .login-box {
@@ -18,7 +22,7 @@ body {
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, .5);
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    box-shadow: 0 15px 25px rgba(255, 0, 149, 0.6);
     border-radius: 10px;
 }
 
