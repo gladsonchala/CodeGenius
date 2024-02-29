@@ -25,7 +25,7 @@
                     <span class="input-item">
                         <i class="fa fa-info-circle"></i>
                     </span>
-                    <textarea class="form-input" id="description" name="description" rows="4" placeholder="Description" required></textarea>
+                    <textarea class="form-input" id="course_description" name="course_description" rows="4" placeholder="course_description" required></textarea>
                     <br>
                     <span class="input-item">
                         <i class="fa fa-link"></i>
@@ -35,18 +35,23 @@
                     <span class="input-item">
                         <i class="fa fa-clock-o"></i>
                     </span>
-                    <input class="form-input" id="duration" name="duration" type="text" placeholder="Duration (Hours)" min="1" required>
+                    <input class="form-input" id="course_duration" name="course_duration" type="text" placeholder="Duration (Hours)" min="1" required>
                     <br>
                     <span class="input-item">
                         <i class="fa fa-list"></i>
                     </span>
-                    <select class="form-input" id="category" name="category" required>
-                        <option value="" disabled selected>Select Category</option>
+                    <select class="form-input" id="course_category" name="course_category" required>
+                        <option value="" disabled selected>Select Course Category</option>
                         <!-- Populate with categories from the database -->
-                        <option value="1">Category 1</option>
-                        <option value="2">Category 2</option>
+                        <option value="1">Course Category 1</option>
+                        <option value="2">Course Category 2</option>
                         <!-- Add more options as needed -->
                     </select>
+                    <br>
+                    <span class="input-item">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    <input class="form-input" id="channel_name" name="channel_name" type="text" placeholder="Course Owner Channel Name" required>
                     <br>
                     <label for="course_image">
                         <i class="fa fa-file-image-o"></i>
