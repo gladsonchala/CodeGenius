@@ -1,0 +1,120 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin:400);
+
+.search-btn {
+    background: #ffffff80;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px rgba(0, 116, 211, 0.10);
+}
+
+.search-btn form {
+    background: #ffb8e1;
+    background: linear-gradient(#ff8fd0, #ffa3e3);
+    border: 1px solid #ffb8e1;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 1px #e05ec2;
+    box-shadow: 2px 5px 10px #ff6ddd;
+    display: inline-block;
+    font-size: 0px;
+    margin: 2px auto; 
+    padding: 5px; 
+    position: relative;
+    width: 97%;
+    height: 50px;
+    z-index: 1;
+}
+
+.search-btn input {
+    background: #f8eff9;    
+    border: 1px solid #d3b4df;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 2px 0 #f0daf3;
+    color: #222;
+    display: block;
+    float: left;
+    font-family: 'Cabin', helvetica, arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    height: 30px;
+    margin: 0;
+    padding: 0 10px;
+    width: 80%;
+    height: 45px;
+}
+
+.ie .search-btn input {
+	line-height: 40px;
+}
+
+.search-btn input::-webkit-input-placeholder {
+   color: #666;
+}
+
+.search-btn input:-moz-placeholder {
+   color: #666;
+}
+
+.search-btn input:focus {
+	animation: glow 800ms ease-out infinite alternate;
+    background: #cfa7cf;
+    border-color: #cba0cb;
+    box-shadow: 0 0 5px rgba(255, 153, 255, .2), inset 0 0 5px rgba(255, 153, 255, .1), 0 2px 0 #fff;
+    color: #fff;
+	outline: none;
+}
+
+.search-btn input:focus::-webkit-input-placeholder { 
+	color: #efe;
+}
+
+.search-btn input:focus:-moz-placeholder {
+	color: #efe;
+}
+
+.search-btn button {
+    background: #8e24aa;
+    background: linear-gradient(#82a, #729);
+    box-sizing: border-box;
+    border: 1px solid #6a1b87;
+    border-left-color: #6a1b87;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 2px 0 #6a1b87;
+    color: #fff;
+    display: block;
+    float: left;
+    font-family: 'Cabin', helvetica, arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 20%;
+    height: 90%;
+}    	
+
+.search-btn button:hover,
+.search-btn button:focus {
+    background: #6a1b87;
+	color: #5f5;
+	outline: none;
+}
+
+.search-btn button:active {
+	background: #619;
+    box-shadow: 0 1px 0 #4a148c, inset 1px 0 1px #6a1b87;
+	top: 1px;
+}
+
+@keyframes glow {
+    0% {
+		border-color: #393;
+		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }	
+    100% {
+		border-color: #6f6;
+		box-shadow: 0 0 30px rgba(200, 255, 0, 0.671), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
