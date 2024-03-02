@@ -1,3 +1,4 @@
+<?php require 'backend/conn.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,6 +77,92 @@
             </div>
         </section>
 
+        
+
+        <!-- Latest Courses -->
+        <section class="latest-courses">
+            <h2>Latest Courses</h2>
+            <div class="scroll-container">
+                <button class="scroll-btn left"><i class="fa fa-chevron-left"></i></button>
+                <div class="course-list latest-courses-scroll">
+                    <!-- Sample Latest Course items -->
+                    <!-- Course items -->
+                    <?php
+                    $sql = $conn->query('SELECT * FROM courses ORDER BY added_date DESC limit 10');
+                    $sql->execute();
+                    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    ?>
+                    <?php foreach($result as $course): ?>
+                    <?php
+                    $isql = $conn->query("SELECT * FROM images where image_id = '{$course["course_image"]}';");
+                    $isql->execute();
+                    $image = $isql->fetch(PDO::FETCH_ASSOC);
+                    if ($image) {
+                        $imageUrl = '/' . basename($image['url']);
+                        $imageAlt = $image['alt'];
+                    } else {
+                        $imageUrl = '';
+                        $imageAlt = '';
+                    }
+                    ?>
+                    <div class="course">
+                        <img src="/CodeGenius/uploads<?php echo $imageUrl; ?>" alt="<?php echo $imageAlt; ?>">
+                        <h3><?php echo $course['course_name']; ?></h3>
+                        <p><?php echo $course['course_duration']; ?></p>
+                        <div class="button-group1">
+                            <button class="enroll-btn">Continue Course</button>
+                            <button class="like-btn">Like</button>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+                <button class="scroll-btn right"><i class="fa fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Latest Articles -->
+        <section class="latest-articles">
+            <h2>Latest Articles</h2>
+            <div class="scroll-container">
+                <button class="scroll-btn left"><i class="fa fa-chevron-left"></i></button>
+                <div class="article-list latest-articles-scroll">
+                    <!-- Sample Latest Article 1 -->
+                    <!-- Article Items -->
+                    <?php
+                    $sql = $conn->query('SELECT * FROM articles ORDER BY added_date DESC limit 10');
+                    $sql->execute();
+                    $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    ?>
+                    <?php foreach($result as $article): ?>
+                    <?php
+                    $isql = $conn->query("SELECT * FROM images where image_id = '{$article["article_image"]}';");
+                    $isql->execute();
+                    $image = $isql->fetch(PDO::FETCH_ASSOC);
+                    if ($image) {
+                        $imageUrl = '/' . basename($image['url']);
+                        $imageAlt = $image['alt'];
+                    } else {
+                        $imageUrl = '';
+                        $imageAlt = '';
+                    }
+                    ?>
+                    <div class="article">
+                        <img src="/CodeGenius/uploads<?php echo $imageUrl; ?>" alt="<?php echo $imageAlt; ?>">
+                        <div class="article-info">
+                            <h3><?php echo $article['article_title'] ?></h3>
+                            <div class="button-group2">
+                                <button class="like-btn">Like</button>
+                                <button class="read-btn">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach ?>
+                </div>
+                <button class="scroll-btn right"><i class="fa fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        
         <!-- Top Liked Courses -->
         <section class="top-liked-courses">
             <h2>Top Liked Courses</h2>
@@ -184,115 +271,6 @@
             </div>
         </section>
 
-
-        <!-- Latest Courses -->
-        <section class="latest-courses">
-            <h2>Latest Courses</h2>
-            <div class="scroll-container">
-                <button class="scroll-btn left"><i class="fa fa-chevron-left"></i></button>
-                <div class="course-list latest-courses-scroll">
-                    <!-- Sample Latest Course items -->
-                    <!-- Sample Latest Course 1 -->
-                    <div class="course">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 5 Image">
-                        <h3>Course 5 Name</h3>
-                        <p>8 Hours</p>
-                        <div class="button-group1">
-                            <button class="enroll-btn">Enroll Now</button>
-                            <button class="like-btn">Like</button>
-                        </div>
-                    </div>
-                    <!-- Sample Latest Course 2 -->
-                    <div class="course">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 6 Image">
-                        <h3>Course 6 Name</h3>
-                        <p>10 Hours</p>
-                        <div class="button-group1">
-                            <button class="enroll-btn">Enroll Now</button>
-                            <button class="like-btn">Like</button>
-                        </div>
-                    </div>
-                    <!-- Sample Latest Course 3 -->
-                    <div class="course">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 7 Image">
-                        <h3>Course 7 Name</h3>
-                        <p>5 Hours</p>
-                        <div class="button-group1">
-                            <button class="enroll-btn">Enroll Now</button>
-                            <button class="like-btn">Like</button>
-                        </div>
-                    </div>
-                    <!-- Sample Latest Course 4 -->
-                    <div class="course">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 8 Image">
-                        <h3>Course 8 Name</h3>
-                        <p>7 Hours</p>
-                        <div class="button-group1">
-                            <button class="enroll-btn">Enroll Now</button>
-                            <button class="like-btn">Like</button>
-                        </div>
-                    </div>
-                </div>
-                <button class="scroll-btn right"><i class="fa fa-chevron-right"></i></button>
-            </div>
-        </section>
-
-        
-
-        <!-- Latest Articles -->
-        <section class="latest-articles">
-            <h2>Latest Articles</h2>
-            <div class="scroll-container">
-                <button class="scroll-btn left"><i class="fa fa-chevron-left"></i></button>
-                <div class="article-list latest-articles-scroll">
-                    <!-- Sample Latest Article 1 -->
-                    <div class="article">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Article 1 Image">
-                        <div class="article-info">
-                            <h3>Article 1 Title</h3>
-                            <div class="button-group2">
-                                <button class="like-btn">Like</button>
-                                <button class="read-btn">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Sample Latest Article 2 -->
-                    <div class="article">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Article 2 Image">
-                        <div class="article-info">
-                            <h3>Article 2 Title</h3>
-                            <div class="button-group2">
-                                <button class="like-btn">Like</button>
-                                <button class="read-btn">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Sample Latest Article 3 -->
-                    <div class="article">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Article 3 Image">
-                        <div class="article-info">
-                            <h3>Article 3 Title</h3>
-                            <div class="button-group2">
-                                <button class="like-btn">Like</button>
-                                <button class="read-btn">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Sample Latest Article 4 -->
-                    <div class="article">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Article 4 Image">
-                        <div class="article-info">
-                            <h3>Article 4 Title</h3>
-                            <div class="button-group2">
-                                <button class="like-btn">Like</button>
-                                <button class="read-btn">Read More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="scroll-btn right"><i class="fa fa-chevron-right"></i></button>
-            </div>
-        </section>
 
         <section class="categories">
             <h2>Categories</h2>

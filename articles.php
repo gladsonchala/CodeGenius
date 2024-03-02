@@ -1,3 +1,4 @@
+<?php require 'backend/conn.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,17 +30,38 @@
         <section class="articles-list">
             <br>
             <div class="article-list">
-                <!-- Sample Article 1 -->
+                <!-- Article Items -->
+                <?php
+                $sql = $conn->query('SELECT * FROM articles ORDER BY added_date DESC limit 10');
+                $sql->execute();
+                $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+                ?>
+                <?php foreach($result as $article): ?>
+                <?php
+                $isql = $conn->query("SELECT * FROM images where image_id = '{$article["article_image"]}';");
+                $isql->execute();
+                $image = $isql->fetch(PDO::FETCH_ASSOC);
+                if ($image) {
+                    $imageUrl = '/' . basename($image['url']);
+                    $imageAlt = $image['alt'];
+                } else {
+                    $imageUrl = '';
+                    $imageAlt = '';
+                }
+                ?>
                 <div class="article">
-                    <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Article 1 Image">
+                    <img src="/CodeGenius/uploads<?php echo $imageUrl; ?>" alt="<?php echo $imageAlt; ?>">
                     <div class="article-info">
-                        <h3>Article 1 Title</h3>
+                        <h3><?php echo $article['article_title'] ?></h3>
                         <div class="button-group2">
                             <button class="like-btn">Like</button>
                             <button class="read-btn">Read More</button>
                         </div>
                     </div>
                 </div>
+                <?php endforeach ?>
+
+                
                 <!-- Sample Article 2 -->
                 <div class="article">
                     <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Article 2 Image">
