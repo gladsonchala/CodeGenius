@@ -13,7 +13,6 @@
         <!-- Welcome Section -->
         <section class="welcome-section">
             <h1>Welcome to CodeGenius Dashboard!</h1>
-            <!-- Add any additional welcome content here -->
         </section>
         
         <!-- Search Functionality -->
@@ -329,6 +328,6 @@
 
     </div>
 
-    <script src="js/index.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
