@@ -283,31 +283,21 @@ checkLoggedIn();
         <section class="categories">
             <h2>Categories</h2>
             <div class="category-list">
-                <div class="category" data-name="category1">
+
+            <?php
+            $sql = $conn->query('SELECT * FROM categories');
+            $sql->execute();
+            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+            ?>
+
+            <?php foreach ($result as $category): ?>
+                <div class="category" onclick="window.location.href='./category?category_id=<?php echo $category['category_id']; ?>'">
                     <div class="category-content" style="background-image: url('/CodeGenius/uploads/sql vs mongo.jpg');">
-                        <h3>Category 1 Name</h3>
+                        <h3><?php echo $category['category_name']; ?></h3>
                     </div>
                 </div>
-                <div class="category" data-name="category2">
-                    <div class="category-content" style="background-image: url('/CodeGenius/uploads/sql vs mongo.jpg');">
-                        <h3>Category 2 Name</h3>
-                    </div>
-                </div>
-                <div class="category" data-name="category3">
-                    <div class="category-content" style="background-image: url('/CodeGenius/uploads/sql vs mongo.jpg');">
-                        <h3>Category 3 Name</h3>
-                    </div>
-                </div>
-                <div class="category" data-name="category4">
-                    <div class="category-content" style="background-image: url('/CodeGenius/uploads/sql vs mongo.jpg');">
-                        <h3>Category 4 Name</h3>
-                    </div>
-                </div>
-                <div class="category" data-name="category5">
-                    <div class="category-content" style="background-image: url('/CodeGenius/uploads/sql vs mongo.jpg');">
-                        <h3>Category 5 Name</h3>
-                    </div>
-                </div>
+            <?php endforeach; ?>
+
             </div>
         </section>
 
