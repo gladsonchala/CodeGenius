@@ -1,4 +1,10 @@
-<?php require 'backend/conn.php'; ?>
+<?php 
+require 'backend/conn.php';
+require 'backend/session.php';
+
+checkLoggedIn();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

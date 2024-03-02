@@ -1,3 +1,11 @@
+<?php 
+require 'backend/conn.php';
+require 'backend/session.php';
+
+redirectLoggedInUser();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

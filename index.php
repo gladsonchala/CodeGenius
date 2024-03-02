@@ -55,8 +55,8 @@
         <div class="container">
             <h2>Get Started Today</h2>
             <div class="cta-buttons">
-                <a href="/register" class="btn btn-signup">Sign Up</a>
-                <a href="/login" class="btn btn-login">Login</a>
+                <a href="./register" class="btn btn-signup">Sign Up</a>
+                <a href="./login" class="btn btn-login">Login</a>
             </div>
         </div>
     </section>
