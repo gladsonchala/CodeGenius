@@ -1,0 +1,198 @@
+/* Fonts From Google Font */
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+/* Global rules */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body rules */
+body {
+    background-image: linear-gradient(-225deg, #04012c 0%, #3f0032 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Vibur', cursive;
+    font-family: 'Abel', sans-serif;
+    opacity: .95;
+}
+
+/* Form attributes */
+form {
+    width: 450px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 0 5px 70px hsla(20, 100%, 50%, 1);
+    padding: 2%;
+    background-image: linear-gradient(-225deg, #77ffd6 50%, #f876de 50%);
+}
+
+/* Form Container */
+form .con {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+/* Header form */
+header {
+    margin: 2% auto 10% auto;
+    text-align: center;
+}
+
+/* Login title form */
+header h2 {
+    font-size: 250%;
+    font-family: 'Playfair Display', serif;
+    color: #3e403f;
+}
+
+/* Welcome message or explanation of the login form */
+header p {
+    letter-spacing: 0.05em;
+}
+
+/* Input items */
+.input-item {
+    background: #fff;
+    color: #333;
+    padding: 14.5px 0px 15px 9px;
+    border-radius: 5px 0px 0px 5px;
+    margin-bottom: 10px; /* Add space between items */
+}
+
+/* Inputs form */
+input[class="form-input"], select[class="form-input"], textarea[class="form-input"] {
+    width: 240px;
+    height: 50px;
+    margin-top: 2%;
+    padding: 15px;
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+    outline: none;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+    margin-bottom: 10px;
+}
+
+/* Specific style for textarea */
+textarea[class="form-input"] {
+    vertical-align: middle; 
+}
+
+/* Focus */
+input:focus, select:focus, textarea:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+}
+
+
+
+
+
+/* Buttons */
+button {
+    display: inline-block;
+    color: #fff;
+    width: 280px;
+    height: 50px;
+    padding: 0 20px;
+    background: #7103b1;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    margin: 7% auto;
+    letter-spacing: 0.05em;
+}
+
+/* Buttons hover */
+button:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+    background-color: #a221ec;
+    color: #00ffea;
+}
+
+
+/* Submit Button */
+input.add-article-btn {
+    display: inline-block;
+    color: #fff;
+    width: 280px;
+    height: 50px;
+    padding: 0 20px;
+    background: #7103b1;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    margin: 7% auto;
+    letter-spacing: 0.05em;
+}
+
+/* Buttons hover */
+input.add-article-btn:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+    background-color: #a221ec;
+    color: #00ffea;
+}
+
+/* ... File Input Styling ... */
+
+/* Hide the default file input */
+input[type="file"] {
+    display: none;
+}
+
+/* Style the label to look like a button */
+label[for="image"] {
+    display: inline-block;
+    color: #0e008d;
+    width: 280px;
+    height: 50px;
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    margin: 7% auto;
+    letter-spacing: 0.05em;
+    line-height: 50px; /* Align the text vertically */
+}
+
+/* Style the label on hover */
+label[for="image"]:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+    background-color: #00f7ff;
+    color: #0004ff;
+}
+
+
+/* Buttons hover Animation */
+@keyframes ani9 {
+    0% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
