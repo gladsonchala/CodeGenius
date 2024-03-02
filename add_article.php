@@ -40,7 +40,7 @@
                     <span class="input-item">
                         <i class="fa fa-user"></i>
                     </span>
-                    <input class="form-input" id="article_author" name="article_author" type="text" placeholder="Article Author">
+                    <input class="form-input" id="article_author" name="article_author" type="text" placeholder="Article Author" required>
                     <br>
                     <label for="image">
                         <i class="fa fa-file-image-o"></i>

@@ -31,11 +31,11 @@ checkLoggedIn();
             </form>
         </section>
 
-
         <!-- Articles List Section -->
         <section class="articles-list">
             <br>
             <div class="article-list">
+
                 <!-- Article Items -->
                 <?php
                 $sql = $conn->query('SELECT * FROM articles ORDER BY added_date DESC limit 10');
@@ -61,46 +61,13 @@ checkLoggedIn();
                         <h3><?php echo $article['article_title'] ?></h3>
                         <div class="button-group2">
                             <button class="like-btn">Like</button>
-                            <button class="read-btn">Read More</button>
+                            <button class="read-btn" onclick="window.location.href='./article_view?article_id=<?php echo $article['article_id']; ?>'">Read</button>
                         </div>
                     </div>
                 </div>
                 <?php endforeach ?>
 
                 
-                <!-- Sample Article 2 -->
-                <div class="article">
-                    <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Article 2 Image">
-                    <div class="article-info">
-                        <h3>Article 2 Title</h3>
-                        <div class="button-group2">
-                            <button class="like-btn">Like</button>
-                            <button class="read-btn">Read More</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sample Article 3 -->
-                <div class="article">
-                    <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Article 3 Image">
-                    <div class="article-info">
-                        <h3>Article 3 Title</h3>
-                        <div class="button-group2">
-                            <button class="like-btn">Like</button>
-                            <button class="read-btn">Read More</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sample Article 4 -->
-                <div class="article">
-                    <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Article 4 Image">
-                    <div class="article-info">
-                        <h3>Article 4 Title</h3>
-                        <div class="button-group2">
-                            <button class="like-btn">Like</button>
-                            <button class="read-btn">Read More</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </div>

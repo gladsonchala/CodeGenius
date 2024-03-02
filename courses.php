@@ -29,6 +29,7 @@ checkLoggedIn();
         <section class="enrolled-courses">
             <h2>All Courses</h2>
             <div class="course-list enrolled-courses-scroll">
+                
                 <!-- Course items -->
                 <?php
                 require 'backend/conn.php';
@@ -54,84 +55,12 @@ checkLoggedIn();
                     <h3><?php echo $course['course_name']; ?></h3>
                     <p><?php echo $course['course_duration']; ?></p>
                     <div class="button-group1">
-                        <button class="enroll-btn">Continue Course</button>
+                        <button class="enroll-btn" onclick="window.location.href='./course_view?course_id=<?php echo $course['course_id']; ?>'">Continue Course</button>
                         <button class="like-btn">Like</button>
                     </div>
                 </div>
                 <?php endforeach; ?>
 
-
-
-                <!-- Sample Course 2 -->
-                <div class="course">
-                    <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 2 Image">
-                    <h3>Course 2 Name</h3>
-                    <p>8 Hours</p>
-                    <div class="button-group1">
-                        <button class="enroll-btn">Enroll Now</button>
-                        <button class="like-btn">Like</button>
-                    </div>
-                </div>
-                <!-- Sample Course 3 -->
-                <div class="course">
-                    <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 3 Image">
-                    <h3>Course 3 Name</h3>
-                    <p>12 Hours</p>
-                    <div class="button-group1">
-                        <button class="enroll-btn">Enroll Now</button>
-                        <button class="like-btn">Like</button>
-                    </div>
-                </div>
-                <!-- Sample Course 4 -->
-                <div class="course">
-                    <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 4 Image">
-                    <h3>Course 4 Name</h3>
-                    <p>6 Hours</p>
-                    <div class="button-group1">
-                        <button class="enroll-btn">Enroll Now</button>
-                        <button class="like-btn">Like</button>
-                    </div>
-                </div>
-                <!-- Sample Top Liked Course 1 -->
-                <div class="course">
-                    <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 3 Image">
-                    <h3>Course 3 Name</h3>
-                    <p>12 Hours</p>
-                    <div class="button-group1">
-                        <button class="enroll-btn">Enroll Now</button>
-                        <button class="like-btn">Like</button>
-                    </div>
-                </div>
-                <!-- Sample Top Liked Course 2 -->
-                <div class="course">
-                    <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 4 Image">
-                    <h3>Course 4 Name</h3>
-                    <p>6 Hours</p>
-                    <div class="button-group1">
-                        <button class="enroll-btn">Enroll Now</button>
-                        <button class="like-btn">Like</button>
-                    </div>
-                </div>
-                <!-- Sample Top Liked Course 3 -->
-                <div class="course">
-                    <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 6 Image">
-                    <h3>Course 6 Name</h3>
-                    <p>9 Hours</p>
-                    <div class="button-group1">
-                        <button class="enroll-btn">Enroll Now</button>
-                        <button class="like-btn">Like</button>
-                    </div>
-                </div>
-                <!-- Sample Top Liked Course 4 -->
-                <div class="course">
-                    <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 7 Image">
-                    <h3>Course 7 Name</h3>
-                    <p>7 Hours</p>
-                    <div class="button-group1">
-                        <button class="enroll-btn">Enroll Now</button>
-                        <button class="like-btn">Like</button>
-                    </div>
-                </div>
             </div>
         </section>
     </div>

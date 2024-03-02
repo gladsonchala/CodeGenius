@@ -118,7 +118,7 @@ checkLoggedIn();
                         <h3><?php echo $course['course_name']; ?></h3>
                         <p><?php echo $course['course_duration']; ?></p>
                         <div class="button-group1">
-                            <button class="enroll-btn">Continue Course</button>
+                            <button class="enroll-btn" onclick="window.location.href='./course_view?course_id=<?php echo $course['course_id']; ?>'">Continue Course</button>
                             <button class="like-btn">Like</button>
                         </div>
                     </div>
@@ -160,7 +160,7 @@ checkLoggedIn();
                             <h3><?php echo $article['article_title'] ?></h3>
                             <div class="button-group2">
                                 <button class="like-btn">Like</button>
-                                <button class="read-btn">Read More</button>
+                                <button class="read-btn" onclick="window.location.href='./article_view?article_id=<?php echo $article['article_id']; ?>'">Read</button>
                             </div>
                         </div>
                     </div>
