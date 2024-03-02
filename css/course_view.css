@@ -1,0 +1,79 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Title */
+h1 {
+    color: #015;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Course Video */
+.course-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-top: 25px;
+    height: 0;
+}
+
+.course-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Course Details */
+.course-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-details p {
+    margin: 0;
+    color: #657;
+}
+
+.course-details a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.course-details a:hover {
+    text-decoration: underline;
+}
+
+/* Course Description */
+.course-description {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.course-description h2 {
+    color: #241841;
+    margin-top: 0;
+}
+
+.course-description p {
+    color: #555;
+    line-height: 1.5;
+}

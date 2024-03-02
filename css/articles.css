@@ -1,0 +1,128 @@
+/* Button Group */
+.button-group2 {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00218b;
+    color: #fee;
+}
+
+.enroll-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.like-btn {
+    margin: 2px;
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.read-btn {
+    background-color: #fcc;
+    margin: 2px;
+    width: 100%;
+}
+
+.read-btn:hover {
+    background-color: #1a015e;
+    color: #ffa7c2;
+}
+
+/* Article */
+.article {
+    flex: 0 0 auto;
+    width: 100%; 
+    max-width: 280px; 
+    border: 1px solid #ddd;
+    margin: 4px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+}
+
+.article img {
+    width: 160px; 
+    height: 150px; 
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.article-info {
+    flex-grow: 1; /* Allow the text to grow and take remaining space */
+}
+
+.article h3 {
+    font-size: 18px;
+}
+
+.article p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.article-list {
+    margin: 3px;
+    padding: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+
+
+/* Responsive Styles */
+@media screen and (min-width: 460px) {
+    .article {
+        flex-basis: 98%; 
+        width: calc(35% - 6px); 
+        max-width: 370px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .article {
+        flex-basis: 40%; 
+        width: calc(35% - 6px); 
+        max-width: 280px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .article {
+        flex-basis: 30%; 
+        width: calc(35% - 6px); 
+        max-width: 280px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .article {
+        flex-basis: 24%; 
+        width: calc(30% - 6px);
+        max-width: 270px;
+    }
+}

@@ -1,0 +1,82 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Article Title */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Article Meta Information */
+.article-meta {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.article-meta p {
+    margin: 5px;
+    color: #666;
+}
+
+/* Article Image */
+.article-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.article-image img {
+    max-height: 30rem;
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+    object-fit: cover;
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+    .article-image img {
+        width: 100%; 
+    }
+}
+
+/* Article Content */
+.article-content {
+    background-color: #f0f8ff; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-content h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+.article-content p {
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .article-content {
+        padding: 15px;
+    }
+}
