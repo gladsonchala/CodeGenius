@@ -1,0 +1,159 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo img {
+    max-width:250px;
+    height: auto;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #6E6DFF; /* Lighter purpled-blue */
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 80px 0;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.about-us p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Services Section */
+.services {
+    background-color: #4A47A3; /* Darker purpled-blue */
+    color: #fff;
+    padding: 80px 0;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.services .service {
+    margin-bottom: 40px;
+}
+
+.services .service h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.services .service p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Signup and Login Section */
+.signup-login {
+    background-color: #6E6DFF; /* Lighter purpled-blue */
+    color: #fff;
+    padding: 80px 0;
+}
+
+.signup-login h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #4A47A3; /* Darker purpled-blue */
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+}
+
+.btn:hover {
+    background-color: #ac6dff; /* Lighter purpled-blue */
+}
+
+.container h2{
+    text-align: center;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .logo img {
+        width: 200px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .about-us h2 {
+        font-size: 2rem;
+    }
+
+    .about-us p {
+        font-size: 1rem;
+    }
+
+    .services h2 {
+        font-size: 2rem;
+    }
+
+    .services .service h3 {
+        font-size: 1.5rem;
+    }
+
+    .services .service p {
+        font-size: 1rem;
+    }
+
+    .signup-login h2 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
