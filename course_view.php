@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/course_view.css">
 </head>
 <body>
+    <?php require 'header.php'; ?>
     <div class="container">
         <!-- Title -->
         <h1><?php echo $course['course_name'] ?></h1>

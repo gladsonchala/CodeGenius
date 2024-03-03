@@ -16,6 +16,7 @@ checkLoggedIn();
     <link rel="stylesheet" href="css/search.css">
 </head>
 <body>
+    <?php require 'header.php'; ?>
     <div class="container">
         <!-- Welcome Section -->
         <section class="welcome-section">

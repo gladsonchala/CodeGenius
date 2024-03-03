@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/login.css"> 
 </head>
 <body>
+    <?php require 'header.php'; ?>
     <div class="login-box">
         <h2>Admin Login</h2>
         <form action="backend/admin_login.php" method="POST" id="login"> 

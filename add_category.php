@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <?php require 'header.php'; ?>
     <div class="overlay">
         <form action="backend/add_category.php" method="POST">
             <div class="con">

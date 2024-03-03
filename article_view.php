@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/article_view.css">
 </head>
 <body>
+    <?php require 'header.php'; ?>
     <div class="container">
         <!-- Article Title -->
         <h1><?php echo $article['article_title'] ?></h1>

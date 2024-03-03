@@ -5,7 +5,7 @@
 <header>
     <div class="header-container">
         <div class="header-logo">
-            <a href="index.php"><img src="./codegenius.png" alt="CodeGenius Logo"></a>
+            <a href="./index"><img src="./codegenius.png" alt="CodeGenius Logo"></a>
         </div>
         <div>
             <h1>CodeGenius</h1>
@@ -13,11 +13,11 @@
 
         <nav>
             <ul class="menu">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="dashboard.php">Dashboard</a></li>
-                <li><a href="courses.php">Courses</a></li>
-                <li><a href="articles.php">Articles</a></li>
-                <li><a href="login.php">Logout</a></li>
+                <li><a href="./index">Home</a></li>
+                <li><a href="./dashboard">Dashboard</a></li>
+                <li><a href="./courses">Courses</a></li>
+                <li><a href="./articles">Articles</a></li>
+                <li><a href="backend/logout">Logout</a></li>
             </ul>
             <div class="mobile-menu-toggle"><i class="fa fa-bars"></i></div>
         </nav>
