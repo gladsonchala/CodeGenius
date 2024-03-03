@@ -2,7 +2,6 @@
 require 'backend/conn.php';
 require 'backend/session.php';
 
-
 checkLoggedIn();
 ?>
 
@@ -301,9 +300,8 @@ checkLoggedIn();
             </div>
         </section>
 
-
     </div>
 
-    <script src="js/dashboard.js"></script>
+    <script type="text/javascript" src="js/dashboard.js"></script>
 </body>
 </html>

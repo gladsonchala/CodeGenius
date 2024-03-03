@@ -44,12 +44,3 @@ document.querySelector('.latest-courses .scroll-btn.left').addEventListener('cli
 document.querySelector('.latest-courses .scroll-btn.right').addEventListener('click', function() {
     latestCoursesContainer.scrollLeft += scrollAmount;
 });
-
-
-// Onclick event for categoryId
-// document.querySelectorAll('.category').forEach(function(category) {
-//     category.addEventListener('click', function() {
-//         var categoryId = this.getAttribute('data-name');
-//         window.location.href = 'category?name=' + encodeURIComponent(categoryId);
-//     });
-// });
