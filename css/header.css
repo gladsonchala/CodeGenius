@@ -41,11 +41,6 @@ body {
     color: #ddd;
 }
 
-.mobile-menu-toggle {
-    display: none;
-    cursor: pointer;
-}
-
 @media (max-width: 768px) {
     .menu {
         display: none;
@@ -53,6 +48,8 @@ body {
 
     .mobile-menu-toggle {
         display: block;
+        margin-right: 20px; 
+        font-size: 240px;
     }
 
     .menu.active {
@@ -68,3 +65,4 @@ body {
         gap: 10px;
     }
 }
+
