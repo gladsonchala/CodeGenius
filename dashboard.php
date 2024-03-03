@@ -299,9 +299,9 @@ checkLoggedIn();
 
             </div>
         </section>
-
+        
     </div>
-
+    <?php //require './footer.php'; ?>
     <script type="text/javascript" src="js/dashboard.js"></script>
 </body>
 </html>
