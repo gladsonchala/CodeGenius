@@ -29,8 +29,8 @@ if($is_db_connected == true){
             echo "<script type='text/javascript'>alert('Invalid email/user_id or password!');</script>";
         }
     }
-    echo "Database connected successfully!";
+    // echo "Database connected successfully!";
 } else {
-    echo "Database not connected. Try again Later!";
+    echo "Something is wrong. Try again Later!";
 }
 ?>

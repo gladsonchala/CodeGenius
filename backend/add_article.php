@@ -1,5 +1,6 @@
 <?php
 require 'image_process.php';
+require 'backend/admin_session.php';
 
 if($is_db_connected){
     if($_SERVER['REQUEST_METHOD'] == 'POST'){

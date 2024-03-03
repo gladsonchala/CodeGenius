@@ -1,5 +1,6 @@
 <?php
 require 'conn.php';
+require 'backend/admin_session.php';
 
 if($is_db_connected){
     $category = $_POST['category_name'];
