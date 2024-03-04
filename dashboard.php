@@ -117,7 +117,7 @@ checkLoggedIn();
                         <h3><?php echo $course['course_name']; ?></h3>
                         <p><?php echo $course['course_duration']; ?></p>
                         <div class="button-group1">
-                            <button class="enroll-btn" onclick="window.location.href='./course_view?course_id=<?php echo $course['course_id']; ?>'">Continue Course</button>
+                            <button class="enroll-btn" onclick="enrollCourse(<?php echo $course['course_id']; ?>)">Enroll</button>
                             <button class="like-btn">Like</button>
                         </div>
                     </div>
@@ -303,5 +303,6 @@ checkLoggedIn();
     </div>
     <?php //require './footer.php'; ?>
     <script type="text/javascript" src="js/dashboard.js"></script>
+    <script type="text/javascript" src="js/course_enroll_btn.js"></script>
 </body>
 </html>

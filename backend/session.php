@@ -16,4 +16,11 @@ function redirectLoggedInUser() {
         exit();
     }
 }
+
+function getCurrentUserId(){
+    if (isset($_SESSION['user_id'])) {
+        return $_SESSION['user_id'];
+    }
+}
+
 ?>

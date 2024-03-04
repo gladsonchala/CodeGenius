@@ -51,12 +51,13 @@ checkLoggedIn();
                     $imageAlt = '';
                 }
                 ?>
+
                 <div class="course">
                     <img src="/CodeGenius/uploads<?php echo $imageUrl; ?>" alt="<?php echo $imageAlt; ?>">
                     <h3><?php echo $course['course_name']; ?></h3>
                     <p><?php echo $course['course_duration']; ?></p>
                     <div class="button-group1">
-                        <button class="enroll-btn" onclick="window.location.href='./course_view?course_id=<?php echo $course['course_id']; ?>'">Continue Course</button>
+                        <button class="enroll-btn" onclick="enrollCourse(<?php echo $course['course_id']; ?>)">Enroll</button>
                         <button class="like-btn">Like</button>
                     </div>
                 </div>
@@ -65,5 +66,7 @@ checkLoggedIn();
             </div>
         </section>
     </div>
+    
+    <script type="text/javascript" src="js/course_enroll_btn.js"></script>
 </body>
 </html>
