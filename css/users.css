@@ -1,0 +1,49 @@
+/* Users Section */
+.users {
+    margin-top: 50px;
+}
+
+.users h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #00218b;
+}
+
+.user-list {
+    overflow-x: auto;
+}
+
+.user-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-list th,
+.user-list td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.user-list th {
+    background-color: #00218b;
+    color: #f2f2f2;
+}
+
+.user-list td {
+    color: #003;
+}
+
+.user-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.user-list tr:hover {
+    background-color: #d2d1ff;
+}
+
+@media screen and (max-width: 768px) {
+    .user-list table {
+        width: 100%;
+    }
+}
