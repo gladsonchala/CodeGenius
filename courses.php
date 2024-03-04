@@ -3,6 +3,17 @@ require 'backend/conn.php';
 require 'backend/session.php';
 
 checkLoggedIn();
+
+// Check if a search query is provided
+if(isset($_GET['query'])) {
+    $searchQuery = htmlspecialchars($_GET['query']);
+    $sql = $conn->prepare("SELECT * FROM courses WHERE course_name LIKE :query OR course_description LIKE :query OR channel_name LIKE :query ORDER BY added_date DESC");    $sql->bindValue(':query', '%' . $searchQuery . '%', PDO::PARAM_STR);
+} else {
+    $sql = $conn->query('SELECT * FROM courses ORDER BY added_date DESC');
+}
+
+$sql->execute();
+$result = $sql->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -13,56 +24,42 @@ checkLoggedIn();
     <title>Courses</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/courses.css"> 
-    <link rel="stylesheet" href="css/search.css">
 </head>
 <body>
     <?php require 'header.php'; ?>
     <div class="container">
-        <!-- Search Functionality -->
-        <section class="search-btn">
-            <form action="index.php" method="GET">		    
-                <input name="query" type="search" placeholder="What are you looking for?">		    	
-                <button type="submit">Search</button>
-            </form>
-        </section>
+        
+    <br>
+    <?php require 'search.php'; ?>
 
         <!-- Courses Section -->
         <section class="enrolled-courses">
             <h2>All Courses</h2>
             <div class="course-list enrolled-courses-scroll">
-                
                 <!-- Course items -->
-                <?php
-                require 'backend/conn.php';
-                $sql = $conn->query('SELECT * FROM courses ORDER BY added_date DESC');
-                $sql->execute();
-                $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-                ?>
                 <?php foreach($result as $course): ?>
-                <?php
-                $isql = $conn->query("SELECT * FROM images where image_id = '{$course["course_image"]}';");
-                $isql->execute();
-                $image = $isql->fetch(PDO::FETCH_ASSOC);
-                if ($image) {
-                    $imageUrl = '/' . basename($image['url']);
-                    $imageAlt = $image['alt'];
-                } else {
-                    $imageUrl = '';
-                    $imageAlt = '';
-                }
-                ?>
-
-                <div class="course">
-                    <img src="/CodeGenius/uploads<?php echo $imageUrl; ?>" alt="<?php echo $imageAlt; ?>">
-                    <h3><?php echo $course['course_name']; ?></h3>
-                    <p><?php echo $course['course_duration']; ?></p>
-                    <div class="button-group1">
-                        <button class="enroll-btn" onclick="enrollCourse(<?php echo $course['course_id']; ?>)">Enroll</button>
-                        <button class="like-btn">Like</button>
+                    <?php
+                    $isql = $conn->query("SELECT * FROM images where image_id = '{$course["course_image"]}';");
+                    $isql->execute();
+                    $image = $isql->fetch(PDO::FETCH_ASSOC);
+                    if ($image) {
+                        $imageUrl = '/' . basename($image['url']);
+                        $imageAlt = $image['alt'];
+                    } else {
+                        $imageUrl = '';
+                        $imageAlt = '';
+                    }
+                    ?>
+                    <div class="course">
+                        <img src="/CodeGenius/uploads<?php echo $imageUrl; ?>" alt="<?php echo $imageAlt; ?>">
+                        <h3><?php echo $course['course_name']; ?></h3>
+                        <p><?php echo $course['course_duration']; ?></p>
+                        <div class="button-group1">
+                            <button class="enroll-btn" onclick="enrollCourse(<?php echo $course['course_id']; ?>)">Enroll</button>
+                            <button class="like-btn">Like</button>
+                        </div>
                     </div>
-                </div>
                 <?php endforeach; ?>
-
             </div>
         </section>
     </div>
