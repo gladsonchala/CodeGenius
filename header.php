@@ -8,7 +8,7 @@
             <a href="./index"><img src="./codegenius.png" alt="CodeGenius Logo"></a>
         </div>
         <div>
-            <h1>CodeGenius</h1>
+            <h1 id="header-title">CodeGenius</h1>
         </div>
 
         <nav>
