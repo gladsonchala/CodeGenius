@@ -15,14 +15,15 @@ $sql_check_enrollment->execute(["user_id"=> $user_id,"course_id"=> $course_id]);
 
 if ($sql_check_enrollment->rowCount() > 0) {
     echo "<script>alert('You\'re already enrolled.')</script>";
-    header("Location: /CodeGenius/course_view.php?course_id=$course_id");
+    echo "<script>window.location.href = '/CodeGenius/course_view.php?course_id=$course_id';</script>";
     exit;
 }
 
 // Insert enrollment into the database
 $sql_enroll = $conn->prepare("INSERT INTO enrolled_courses (user_id, course_id) VALUES (:user_id, :course_id)");
 $sql_enroll->execute(["user_id"=> $user_id,"course_id"=> $course_id]);
+
 echo "<script>alert('Enrolled Successfully')</script>";
-header("Location: /CodeGenius/course_view.php?course_id=$course_id");
+echo "<script>window.location.href = '/CodeGenius/course_view.php?course_id=$course_id';</script>";
 exit;
 ?>

@@ -38,51 +38,39 @@ checkLoggedIn();
             <div class="scroll-container">
                 <button class="scroll-btn left"><i class="fa fa-chevron-left"></i></button>
                 <div class="course-list enrolled-courses-scroll">
-                    <!-- Sample Enrolled Course items -->
-                    <!-- Sample Enrolled Course 1 -->
-                    <div class="course">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 1 Image">
-                        <h3>Course 1 Name</h3>
-                        <p>10 Hours</p>
-                        <div class="button-group1">
-                            <button class="enroll-btn">Continue Course</button>
-                            <button class="like-btn">Like</button>
+                    <?php
+                    $sql_enrolled_courses = $conn->prepare("SELECT courses.course_id, courses.course_name, courses.course_duration, courses.course_image FROM enrolled_courses INNER JOIN courses ON enrolled_courses.course_id = courses.course_id WHERE enrolled_courses.user_id = :user_id");
+                    $sql_enrolled_courses->execute(["user_id" => getCurrentUserId()]);
+                    $enrolled_courses = $sql_enrolled_courses->fetchAll(PDO::FETCH_ASSOC);
+                    ?>
+                    <?php foreach($enrolled_courses as $course): ?>
+                    <?php
+                    $imageQuery = $conn->query("SELECT * FROM images where image_id = '{$course["course_image"]}';");
+                    $imageQuery->execute();
+                    $image = $imageQuery->fetch(PDO::FETCH_ASSOC);
+                    if ($image) {
+                        $imageUrl = '/' . basename($image['url']);
+                        $imageAlt = $image['alt'];
+                    } else {
+                        $imageUrl = '';
+                        $imageAlt = '';
+                    }
+                    ?>
+                        <div class="course">
+                            <img src="/CodeGenius/uploads<?php echo $imageUrl; ?>" alt="<?php echo $imageAlt; ?>">
+                            <h3><?php echo $course['course_name']; ?></h3>
+                            <p><?php echo $course['course_duration']; ?></p>
+                            <div class="button-group1">
+                                <button class="enroll-btn" onclick="enrollCourse(<?php echo $course['course_id']; ?>)">Enroll</button>
+                                <button class="like-btn">Like</button>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Sample Enrolled Course 2 -->
-                    <div class="course">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 2 Image">
-                        <h3>Course 2 Name</h3>
-                        <p>8 Hours</p>
-                        <div class="button-group1">
-                            <button class="enroll-btn">Enroll Now</button>
-                            <button class="like-btn">Like</button>
-                        </div>
-                    </div>
-                    <!-- Sample Enrolled Course 3 -->
-                    <div class="course">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 3 Image">
-                        <h3>Course 3 Name</h3>
-                        <p>12 Hours</p>
-                        <div class="button-group1">
-                            <button class="enroll-btn">Enroll Now</button>
-                            <button class="like-btn">Like</button>
-                        </div>
-                    </div>
-                    <!-- Sample Enrolled Course 4 -->
-                    <div class="course">
-                        <img src="/CodeGenius/uploads/sql vs mongo.jpg" alt="Course 4 Image">
-                        <h3>Course 4 Name</h3>
-                        <p>6 Hours</p>
-                        <div class="button-group1">
-                            <button class="enroll-btn">Enroll Now</button>
-                            <button class="like-btn">Like</button>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
                 <button class="scroll-btn right"><i class="fa fa-chevron-right"></i></button>
             </div>
         </section>
+
 
         
 
