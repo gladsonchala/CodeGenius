@@ -17,6 +17,8 @@ checkLoggedInAdmin();
     <link rel="stylesheet" href="css/users.css"> 
 </head>
 <body>
+<script type="text/javascript" src="js/delete_prompt.js"></script>
+
 <?php require 'admin_header.php'; ?>
     <div class="container">
         <!-- Welcome Section -->
@@ -58,7 +60,7 @@ checkLoggedInAdmin();
                         <p><?php echo $course['course_duration']; ?></p>
                         <div class="button-group1">
                             <button class="enroll-btn" onclick="window.location.href='./course_view?course_id=<?php echo $course['course_id']; ?>'">Continue Course</button>
-                            <button class="like-btn" onclick="deleteCourse(<?php echo $course['course_id']; ?>)">Delete</button>
+                            <button class="like-btn" onclick="deleteItem('course', <?php echo $course['course_id']; ?>)">Delete</button>
                         </div>
                     </div>
                     <?php endforeach; ?>
@@ -98,7 +100,7 @@ checkLoggedInAdmin();
                         <div class="article-info">
                             <h3><?php echo $article['article_title'] ?></h3>
                             <div class="button-group2">
-                                <button class="like-btn" onclick="deleteArticle(<?php echo $article['article_id']; ?>)">Delete</button>
+                                <button class="like-btn" onclick="deleteItem('article', <?php echo $article['article_id']; ?>)">Delete</button>
                                 <button class="read-btn" onclick="window.location.href='./article_view?article_id=<?php echo $article['article_id']; ?>'">Read</button>
                             </div>
                         </div>
@@ -120,11 +122,12 @@ checkLoggedInAdmin();
             ?>
 
             <?php foreach ($result as $category): ?>
-                <div class="category" onclick="window.location.href='./category?category_id=<?php echo $category['category_id']; ?>'">
+                <div class="category">
                     <div class="category-content" style="background-image: url('/CodeGenius/uploads/sql vs mongo.jpg');">
                         <h3><?php echo $category['category_name']; ?></h3>
-                        <button class="like-btn">Delete</button>
-                    </div>
+                    </div> 
+                    <button class="read-btn"  onclick="window.location.href='./category?category_id=<?php echo $category['category_id']; ?>'">Open</button>
+                    <button class="like-btn"  onclick="deleteItem('category', <?php echo $category['category_id']; ?>);">Delete</button>
                 </div>
             <?php endforeach; ?>
 
@@ -149,7 +152,7 @@ checkLoggedInAdmin();
                         <th>Phone</th>
                     </tr>
                     <?php
-                    $usersQuery = $conn->query('SELECT * FROM users');
+                    $usersQuery = $conn->query('SELECT * FROM users limit 15');
                     while ($user = $usersQuery->fetch(PDO::FETCH_ASSOC)) {
                         echo "<tr>";
                         echo "<td>{$user['user_id']}</td>";
@@ -165,6 +168,5 @@ checkLoggedInAdmin();
 
     </div>
     <script type="text/javascript" src="js/dashboard.js"></script>
-    <script type="text/javascript" src="js/delete.js"></script>
 </body>
 </html>

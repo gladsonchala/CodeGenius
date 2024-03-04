@@ -1,3 +1,9 @@
+<?php 
+require 'backend/conn.php';
+require 'backend/admin_session.php';
+
+checkLoggedInAdmin();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
